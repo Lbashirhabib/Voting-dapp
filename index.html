@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voting DApp</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Voting DApp</h1>
+    
+    <div id="wallet-section">
+      <button id="connectWallet">Connect Wallet</button>
+      <div id="accountInfo" class="hidden">
+        <p>Account: <span id="accountAddress"></span></p>
+        <p>Balance: <span id="accountBalance"></span> ETH</p>
+      </div>
+    </div>
+    
+    <div id="voting-section" class="hidden">
+      <h2>Cast Your Vote</h2>
+      <p>Contract: 0x35cd167FA931C6c5f07AbB2621846FC35054ba06</p>
+      <div class="vote-options">
+        <button id="vote1">Vote for Proposal 1</button>
+        <button id="vote2">Vote for Proposal 2</button>
+      </div>
+      <div id="transactionStatus"></div>
+    </div>
+  </div>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>
