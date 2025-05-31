@@ -160,22 +160,3 @@ function updateTransactionStatus(message, status) {
   
   transactionStatusDiv.style.backgroundColor = colors[status] || '#F8F9FA';
 }
-// After successful wallet connection
-const signer = await provider.getSigner();
-const contractWithSigner = votingContract.connect(signer);
-
-// Voting function
-async function castVote(proposalNumber) {
-  try {
-    const tx = await contractWithSigner.vote(proposalNumber);
-    console.log(`Transaction hash: ${tx.hash}`);
-    await tx.wait();
-    console.log('Vote recorded!');
-  } catch (error) {
-    console.error('Voting failed:', error);
-  }
-}
-
-// Connect to UI buttons
-document.getElementById('vote1').addEventListener('click', () => castVote(1));
-document.getElementById('vote2').addEventListener('click', () => castVote(2));
